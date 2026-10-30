@@ -1,0 +1,301 @@
+{
+  "benchmark": "企业研究 20 题（2026-10-20）",
+  "agent": "BusinessAgent V2 live mode",
+  "reference": "<external>/企业研究_20题_参考答案_2026-10-20.md",
+  "reference_notes": "<external>/notes_20q/",
+  "run_date": "2026-10-20",
+  "db": "data/benchmark-20261020.sqlite3",
+  "output_root": "runs/benchmark-final-20261020",
+  "instructions": "goal 字段是实际传给 Agent 的唯一研究任务；expected 字段只用于评测，不进入 Agent 的提示词、检索库或运行参数。",
+  "questions": [
+    {
+      "id": "Q1",
+      "company": "Tesla",
+      "difficulty": "easy",
+      "preset": "easy",
+      "goal": "Tesla 最近一个月股价变化和当前市值是多少？请给出起止日期、收盘价、计算方法、股本口径与数据来源。",
+      "expected": [
+        "明确起止日期与是否为收盘价，说明窗口内首个交易日/前一交易日口径",
+        "给出期初与期末收盘价并计算涨跌幅",
+        "给出市值，并说明所用股本口径（已发行股/基本/稀释）",
+        "标注数据抓取日期与盘中/收盘区别"
+      ],
+      "reference_note": "动态数据；参考答案以 2026-10-19 为快照，评估时按运行日重新核对，不要求与参考答案数值逐字一致"
+    },
+    {
+      "id": "Q2",
+      "company": "Tesla",
+      "difficulty": "easy",
+      "preset": "standard",
+      "goal": "Tesla 2025 财年总营收和汽车业务毛利率是多少？请区分 GAAP 汽车毛利率、剔除监管积分后的非 GAAP 汽车毛利率，以及 automotive sales only 口径，并给出来源与计算。",
+      "expected": [
+        "FY2025 总营收 94,827 百万美元",
+        "GAAP 汽车毛利率 17.8%",
+        "剔除监管积分后的 non-GAAP 汽车毛利率 15.4%",
+        "automotive sales only 推导约 14.5%（65,821 与 56,267 的差除以 65,821）",
+        "区分总汽车收入（含积分与租赁）与 automotive sales only 口径"
+      ]
+    },
+    {
+      "id": "Q3",
+      "company": "Microsoft",
+      "difficulty": "easy",
+      "preset": "standard",
+      "goal": "Microsoft 365 E3 的官方标价是多少？请注明计费周期、是否含 Teams、地区与税费口径，并给出官方来源。",
+      "expected": [
+        "Microsoft 365 E3（含 Teams）US$39.00/用户/月，年付/年度承诺",
+        "Microsoft 365 E3 (no Teams) US$30.45/用户/月",
+        "美国区、美元、标价是否含税需注明",
+        "官方定价页来源"
+      ]
+    },
+    {
+      "id": "Q4",
+      "company": "Notion",
+      "difficulty": "easy",
+      "preset": "standard",
+      "goal": "Notion Team 版的官方定价是多少？如果该名称已变更，请说明现行对应计划、月付与年付价格、计费单位与地区口径。",
+      "expected": [
+        "当前无独立 Team 计划；Team 于 2022-12 更名为 Plus",
+        "Plus 年付 US$10/成员/月，月付 US$12/成员/月",
+        "Free/Business/Enterprise 档位与 Enterprise 为 Custom",
+        "按成员（seat）计费，年付为一次性年费"
+      ]
+    },
+    {
+      "id": "Q9",
+      "company": "NVIDIA",
+      "difficulty": "easy",
+      "preset": "standard",
+      "goal": "NVIDIA 最新财季数据中心业务营收是多少？请注明财季、起止日期、总营收、同比增速与数据来源。",
+      "expected": [
+        "截至 2026-10-20 最新已发布财季为 FY2027 Q2，财季截至 2026-07-26",
+        "数据中心营收 89,023 百万美元（新闻稿约 89.0B）",
+        "总营收 96,221 百万美元",
+        "数据中心同比 +117%",
+        "区分 Data Center 市场平台口径与报告分部口径"
+      ]
+    },
+    {
+      "id": "Q11",
+      "company": "Tesla",
+      "difficulty": "medium",
+      "preset": "standard",
+      "goal": "Tesla 收入由哪些业务构成？各业务占比如何？请区分利润表收入线与报告分部两种口径，并给出计算与来源。",
+      "expected": [
+        "FY2025 总收入 94,827 百万美元",
+        "汽车收入 69,526（73.3%）、能源 12,771（13.5%）、服务及其他 12,530（13.2%）",
+        "报告分部：汽车分部（含服务）82,056（86.5%）、能源 12,771（13.5%）",
+        "说明两种口径不能混用；Automotive sales 65,821、regulatory credits 1,993、leasing 1,712"
+      ]
+    },
+    {
+      "id": "Q12",
+      "company": "Microsoft",
+      "difficulty": "medium",
+      "preset": "standard",
+      "goal": "Microsoft 365 E3 和 E5 的主要差异是什么？请比较价格、身份与终端安全、合规、语音与分析能力，并注明易误判项。",
+      "expected": [
+        "E3 US$39、E5 US$60/用户/月（年付含 Teams）；无 Teams 为 30.45/51.45",
+        "E5 为 E3 超集，价差 US$21/用户/月",
+        "Entra ID P1→P2、Defender for Endpoint P1→P2、Defender for Office 365 P1→P2",
+        "Purview P1→P2、eDiscovery/Audit Standard→Premium、Insider Risk",
+        "Power BI Pro、音频会议、Teams Phone 进入 E5",
+        "Microsoft 365 Copilot 不含在 E5（需 add-on）；E5 默认含 Security Copilot",
+        "E3 已有 Defender P1，不是没有 Defender"
+      ]
+    },
+    {
+      "id": "Q13",
+      "company": "Sticker Mule",
+      "difficulty": "medium",
+      "preset": "standard",
+      "goal": "Sticker Mule 的定价策略和主要客户群体是什么？请区分官方陈述与第三方归纳，并注明未知项。",
+      "expected": [
+        "按数量阶梯定价，贴纸常见 10 件起；不同产品 MOQ 不同",
+        "免费 proof、免费配送、4 天交期；最终价格在 proof 阶段按实际尺寸调整",
+        "客户以小企业、电商品牌、创作者、代理商为主（第三方归纳）",
+        "客户结构、收入占比、CAC 未公开"
+      ]
+    },
+    {
+      "id": "Q15",
+      "company": "Shopify",
+      "difficulty": "medium",
+      "preset": "standard",
+      "goal": "Shopify 的订阅费和支付服务费各占收入多少？请区分订阅解决方案与商家解决方案，并说明支付费用是否有单独披露。",
+      "expected": [
+        "FY2025 总营收 11,556 百万美元",
+        "Subscription solutions 2,752（23.8%，公司披露 24%）",
+        "Merchant solutions 8,804（76.2%，公司披露 76%）",
+        "支付处理/货币转换费未单独披露，合并在 Merchant solutions",
+        "Shopify Payments 是 merchant solutions 最大组成部分"
+      ]
+    },
+    {
+      "id": "Q17",
+      "company": "Starbucks",
+      "difficulty": "medium",
+      "preset": "standard",
+      "goal": "星巴克中国的会员体系和数字化运营有哪些关键做法？请给出来源、关键数字与 2026 年后的披露口径变化。",
+      "expected": [
+        "星享俱乐部四级积分会员（银星/玉星/金星/钻星），消费积分与星星兑换",
+        "会员规模：2026-03 约 1.78 亿；2025 财年末活跃会员 2,550 万",
+        "App/微信小程序/支付宝生态点单与支付",
+        "啡快（到店自提）与专星送（外送）双抓手",
+        "数字化销售占比最后公开为 FY2024 Q2 的 52%",
+        "电子菜单板、IoT、AI 排班、库存预测",
+        "2026-04 博裕 60% 合资交割后中国零售不再并表，披露口径变化"
+      ]
+    },
+    {
+      "id": "Q21",
+      "company": "Sticker Mule",
+      "difficulty": "hard",
+      "preset": "deep",
+      "goal": "Sticker Mule 哪些业务流程适合用 AI agent 自动化？请按环节说明，区分公开事实、判断与待核实假设。",
+      "expected": [
+        "优先前端 artwork 预检/打样/proof 批准与修改",
+        "Tier-1 客服、售后定责/补印适合 agent",
+        "印刷、切割、包装本体的边际收益低，物理与色彩终判需人工",
+        "给出依据与未知项：内部系统栈、proof 自动化率、客服解决率、缺陷率未公开",
+        "不得用招聘广告推断已部署 agent，需区分已部署与计划"
+      ]
+    },
+    {
+      "id": "Q22",
+      "company": "Sticker Mule",
+      "difficulty": "hard",
+      "preset": "deep",
+      "goal": "Sticker Mule 从下单到交付的完整流程是什么？哪些环节依赖人工？请给出端到端步骤、时间口径与未公开环节。",
+      "expected": [
+        "下单→即时报价→支付授权→文件扫描→4 小时 proof→批准/修改→生产队列→印刷/切割→人工质检包装→UPS 发货→72 小时售后",
+        "系统自动：报价、支付授权、文件扫描、proof 必要性判断、生产队列",
+        "人工集中：proofing team、机器操作/排产、质检包装、客服",
+        "标准美国订单 4 个工作日生产 + 2 天运输；大额订单更长",
+        "无官方端到端 SOP；印前/RIP、抽检比例、包装线自动化未知"
+      ]
+    },
+    {
+      "id": "Q23",
+      "company": "Sticker Mule",
+      "difficulty": "hard",
+      "preset": "deep",
+      "goal": "Sticker Mule 如何获客？主要渠道和转化路径是什么？请区分官方陈述、第三方证据与推断，并注明未知数据。",
+      "expected": [
+        "搜索（SEO + Google Ads）是主要 inbound 渠道之一",
+        "自有邮件/SMS 承担复购与新品冷启动",
+        "口碑/客服与早期社区是关键",
+        "2025–2026 叠加 Stores、Give 抽奖、10% Commissions 推荐飞轮",
+        "转化路径：产品页→上传 artwork→报价→免费 proof→下单→生产→配送→复购/推荐",
+        "CAC、渠道占比、转化率、邮件列表规模未公开"
+      ]
+    },
+    {
+      "id": "Q25",
+      "company": "Gumroad",
+      "difficulty": "hard",
+      "preset": "deep",
+      "goal": "Gumroad 的收入模式、抽成比例和创作者结构是什么？请区分直接销售与 Discover，并注明未公开数据。",
+      "expected": [
+        "直接销售 10% + US$0.50，另加卡处理费 2.9% + US$0.30（PayPal 另计）",
+        "Discover 30% 统一费率，含全部支付处理费",
+        "月销满 US$20,000 后当月新增直接销售 5% + US$0.50",
+        "无月费/订阅档",
+        "创作者总数、GMV、品类占比、头部集中度未公开；官方仅披露累计支付超 10 亿美元"
+      ]
+    },
+    {
+      "id": "Q26",
+      "company": "Plausible",
+      "difficulty": "hard",
+      "preset": "deep",
+      "goal": "Plausible 的定价、客户定位和增长方式是什么？请注明官方数字、未公开指标与竞争约束。",
+      "expected": [
+        "按每月 pageviews + events 计费，不按席位",
+        "Starter/Growth/Business 10k 档为 US$9/US$14/US$19 每月；年付按 10 个月",
+        "隐私优先、无 cookie、开源 AGPLv3、EU 托管；有免费自托管 CE",
+        "核心客户：个人站长、博主/创作者、中小企业、隐私敏感 SaaS、代理商",
+        "增长：内容/SEO、Hacker News、开源社区、口碑；无广告、无销售团队",
+        "10 人团队、21k+ 付费订阅；准确 ARR/ARPU/churn/plan mix 未公开"
+      ]
+    },
+    {
+      "id": "Q31",
+      "company": "Sticker Mule",
+      "difficulty": "very_hard",
+      "preset": "deep",
+      "goal": "Sticker Mule 未来两年最值得用 agent 改造的三个环节是什么？请按 ROI 排序，明确列出输入假设、计算与置信度。",
+      "expected": [
+        "排序：artwork 预检/打样第一，一线客服第二，质量索赔/重印第三",
+        "给出两年净收益/ROI 的估算框架与关键输入（订单量、AOV、人力成本、自动化率等）",
+        "明确这些是模型估算，不是公司披露；数据变化会改变排序",
+        "注明最大数据缺口：订单量、proof 自动化率、客服既有自动化率、索赔率",
+        "至少讨论 4 天交期/无限改稿、颜色终判、品牌风险的约束"
+      ]
+    },
+    {
+      "id": "Q32",
+      "company": "Sticker Mule",
+      "difficulty": "very_hard",
+      "preset": "deep",
+      "goal": "Sticker Mule 若要进入中国市场，优先选哪些产品？请给出关键证据、判断和未验证假设。",
+      "expected": [
+        "优先轻小件：贴纸、标签、包装插卡",
+        "第二优先包装插卡/品牌胶带/邮寄袋等轻包装",
+        "创作者/活动贴纸可作为品牌入口但客单价低",
+        "按钮、磁贴、服装、亚克力、大件包装后排",
+        "证据：现有产品线、全球配送、4 天交期、proof 能力",
+        "未验证：中国需求、价格敏感度、本地竞争、支付/物流/合规、到岸成本"
+      ]
+    },
+    {
+      "id": "Q34",
+      "company": "Gumroad",
+      "difficulty": "very_hard",
+      "preset": "deep",
+      "goal": "Gumroad 的商业模式能否被 agent 原生平台替代？请按环节分析壁垒和风险，并区分事实、推导、判断与假设。",
+      "expected": [
+        "前端（商品页、结账、支付、简单文件交付）易被商品化",
+        "后端（MoR、全球税务、风控/拒付、退款/客服、复杂履约、受众、全球收款）仍是壁垒",
+        "最可能路径是渠道共存 + Gumroad 后端化，而非整体替代",
+        "整体替代需同时具备多项能力，目前无人具备",
+        "引用 2026 年 agent commerce 政策事实（ACP 非 MoR、ChatGPT Apps 实物限制等）",
+        "明确政策/平台责任假设"
+      ]
+    },
+    {
+      "id": "Q35",
+      "company": "Plausible",
+      "difficulty": "very_hard",
+      "preset": "deep",
+      "goal": "Plausible 能否通过涨价提升收入？请给出情景分析、所需证据和判断边界。",
+      "expected": [
+        "可有选择地提价 5%–10%：新客、Business/Enterprise、超额使用",
+        "对全部存量客户普涨 20% 是否增收，公开证据不足",
+        "单期保本流失率：5%/10%/20% 对应 4.76%/9.09%/16.67%",
+        "LTV 口径更紧；grandfathering 使牌价上涨与存量收入脱钩",
+        "缺少分层 churn、价格弹性、plan mix、毛利等证据",
+        "竞品约束：Fathom、Umami 免费/低价、Simple Analytics"
+      ]
+    },
+    {
+      "id": "Q36",
+      "company": "Fathom",
+      "company_aliases": [
+        "Plausible"
+      ],
+      "difficulty": "very_hard",
+      "preset": "deep",
+      "goal": "Fathom vs Plausible 的竞争壁垒是否可持续？请比较产品、定价、客户、渠道和成本结构，并区分事实与判断。",
+      "expected": [
+        "Fathom：极简、全功能、按流量计费、50 站点起，对多站点/代理商更便宜",
+        "Plausible：开源 AGPLv3、EU 数据驻留、白标、企业角色与 SSO",
+        "同流量对比：100k PV Fathom US$15 vs Plausible Business US$39；1M US$60 vs US$139；10M US$200 vs US$339",
+        "两家均为 bootstrapped、盈利的利基生意；核心功能高度商品化",
+        "Fathom 壁垒中等；Plausible 中等偏强但受开源变现上限约束",
+        "两家收入、churn、CAC、Fathom 团队人数未公开"
+      ]
+    }
+  ]
+}

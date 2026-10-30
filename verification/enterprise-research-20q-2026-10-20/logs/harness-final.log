@@ -1,0 +1,5 @@
+[run] Q4 Notion preset=standard
+{"id": "Q4", "company": "Notion", "difficulty": "easy", "preset": "standard", "exit_code": 0, "elapsed_seconds": 88.5, "directory": "runs/benchmark-final-20261020/Q4/research-16cf3a125357-ufz7hx_q", "stop_reason": "no_blocking_gaps", "rounds": 3, "evidence": 19, "claims": 13, "log": "verification/enterprise-research-20q-2026-10-20/logs/Q4.log"}
+[run] Q1 Tesla preset=easy
+{"id": "Q1", "company": "Tesla", "difficulty": "easy", "preset": "easy", "exit_code": 0, "elapsed_seconds": 293.0, "directory": "runs/benchmark-final-20261020/Q1/research-e7fdd016b8cd-s3urw8ik", "stop_reason": "round_limit", "rounds": 6, "evidence": 16, "claims": 15, "log": "verification/enterprise-research-20q-2026-10-20/logs/Q1.log"}
+[run] Q2 Tesla preset=standard

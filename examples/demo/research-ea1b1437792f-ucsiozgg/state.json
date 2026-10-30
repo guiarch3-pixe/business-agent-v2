@@ -1,0 +1,239 @@
+{
+  "run_id": "ea1b1437792f",
+  "company": "示例科技（合成）-385c1459",
+  "goal": "示例科技的收入模式及客户续费情况如何？",
+  "mode": "demo",
+  "questions": [
+    {
+      "id": "q0",
+      "text": "示例科技的收入模式及客户续费情况如何？",
+      "parent_gap_id": null,
+      "round": 0
+    },
+    {
+      "id": "q1",
+      "text": "示例科技的收入模式是什么？",
+      "parent_gap_id": "gap0",
+      "round": 1
+    },
+    {
+      "id": "q2",
+      "text": "示例科技2025年客户续费率是多少？",
+      "parent_gap_id": "gap1",
+      "round": 2
+    },
+    {
+      "id": "q3",
+      "text": "示例科技的收入模式及客户续费情况如何？",
+      "parent_gap_id": "gap0",
+      "round": 3
+    }
+  ],
+  "evidence": [
+    {
+      "id": "ev_5cfe78afbe85302470b512a3",
+      "question_id": "q1",
+      "source_id": "src_b783e403e8d2211c656b8047",
+      "chunk_id": "chk_b783e403e8d2211c656b8047_0",
+      "quote": "合成示例材料：示例科技通过年度软件订阅收费。订阅合同按年签订。",
+      "start": 0,
+      "end": 31
+    },
+    {
+      "id": "ev_5ff82e2265979b2c3b93319b",
+      "question_id": "q2",
+      "source_id": "src_55615e7ac1e9493e8984048f",
+      "chunk_id": "chk_55615e7ac1e9493e8984048f_0",
+      "quote": "合成示例网页：示例科技在2025年的客户续费率为92%。该指标按续约客户数除以到期客户数计算。",
+      "start": 0,
+      "end": 47
+    }
+  ],
+  "claims": [
+    {
+      "id": "c1_1",
+      "question_id": "q1",
+      "kind": "fact",
+      "text": "资料称企业按年收取订阅费。",
+      "status": "supported",
+      "citations": [
+        {
+          "evidence_id": "ev_5cfe78afbe85302470b512a3",
+          "relation": "supports"
+        }
+      ],
+      "rationale": "仅依据合成演示原文。"
+    },
+    {
+      "id": "c1_2",
+      "question_id": "q1",
+      "kind": "deduction",
+      "text": "合同按年到期，因此每年存在续约节点。",
+      "status": "supported",
+      "citations": [
+        {
+          "evidence_id": "ev_5cfe78afbe85302470b512a3",
+          "relation": "supports"
+        }
+      ],
+      "rationale": "合成示例推导，不代表真实企业判断。"
+    },
+    {
+      "id": "c1_3",
+      "question_id": "q1",
+      "kind": "business_judgment",
+      "text": "评估收入持续性需要补查客户续费数据。",
+      "status": "supported",
+      "citations": [
+        {
+          "evidence_id": "ev_5cfe78afbe85302470b512a3",
+          "relation": "supports"
+        }
+      ],
+      "rationale": "合成示例推导，不代表真实企业判断。"
+    },
+    {
+      "id": "c1_4",
+      "question_id": "q1",
+      "kind": "hypothesis",
+      "text": "客户可能持续续费，仍待验证。",
+      "status": "unverified",
+      "citations": [
+        {
+          "evidence_id": "ev_5cfe78afbe85302470b512a3",
+          "relation": "supports"
+        }
+      ],
+      "rationale": "合成示例推导，不代表真实企业判断。"
+    },
+    {
+      "id": "c2_1",
+      "question_id": "q2",
+      "kind": "fact",
+      "text": "合成资料披露2025年客户续费率为92%。",
+      "status": "supported",
+      "citations": [
+        {
+          "evidence_id": "ev_5ff82e2265979b2c3b93319b",
+          "relation": "supports"
+        }
+      ],
+      "rationale": "仅依据合成演示原文。"
+    },
+    {
+      "id": "c3_1",
+      "question_id": "q3",
+      "kind": "fact",
+      "text": "企业按年收取订阅费，合成资料披露2025年客户续费率为92%。",
+      "status": "supported",
+      "citations": [
+        {
+          "evidence_id": "ev_5cfe78afbe85302470b512a3",
+          "relation": "supports"
+        },
+        {
+          "evidence_id": "ev_5ff82e2265979b2c3b93319b",
+          "relation": "supports"
+        }
+      ],
+      "rationale": "仅依据合成演示原文。"
+    }
+  ],
+  "gaps": [
+    {
+      "id": "gap0",
+      "question_id": "q0",
+      "description": "示例科技的收入模式及客户续费情况如何？",
+      "priority": 5,
+      "status": "resolved",
+      "claim_ids": [],
+      "resolution_claim_ids": [
+        "c3_1"
+      ],
+      "resolution_reason": "合成演示：先回答子问题，补齐续费证据后再综合回答原始问题。"
+    },
+    {
+      "id": "gap1",
+      "question_id": "q1",
+      "description": "示例科技2025年客户续费率是多少？",
+      "priority": 5,
+      "status": "resolved",
+      "claim_ids": [
+        "c1_3"
+      ],
+      "resolution_claim_ids": [
+        "c2_1"
+      ],
+      "resolution_reason": "合成演示：先回答子问题，补齐续费证据后再综合回答原始问题。"
+    }
+  ],
+  "sources": [
+    {
+      "id": "src_b783e403e8d2211c656b8047",
+      "company": "示例科技（合成）-385c1459",
+      "url": "https://example.invalid/subscription",
+      "title": "合成年度订阅资料",
+      "kind": "demo",
+      "text": "合成示例材料：示例科技通过年度软件订阅收费。订阅合同按年签订。",
+      "content_hash": "980310881680d99f9cf8a3663c5ff87acbd827c89d4f526a25ed3b907b84b991",
+      "retrieved_at": "2026-10-19T07:32:16.220824Z",
+      "location": "cleaned text",
+      "truncated": false,
+      "acquisition": null
+    },
+    {
+      "id": "src_55615e7ac1e9493e8984048f",
+      "company": "示例科技（合成）-385c1459",
+      "url": "https://example.invalid/retention",
+      "title": "合成续费资料",
+      "kind": "demo",
+      "text": "合成示例网页：示例科技在2025年的客户续费率为92%。该指标按续约客户数除以到期客户数计算。",
+      "content_hash": "a7018b6058ad4560e40bef87be0e04042e63bbdf15e57b11bc636893059dbe6b",
+      "retrieved_at": "2026-10-19T07:32:16.242705Z",
+      "location": "cleaned page",
+      "truncated": false,
+      "acquisition": {
+        "run_id": "ea1b1437792f",
+        "question_id": "q2",
+        "question": "示例科技2025年客户续费率是多少？",
+        "search_id": "search1",
+        "query": "示例科技2025年客户续费率是多少？",
+        "requested_url": "https://example.invalid/retention"
+      }
+    }
+  ],
+  "chunks": [
+    {
+      "id": "chk_b783e403e8d2211c656b8047_0",
+      "source_id": "src_b783e403e8d2211c656b8047",
+      "start": 0,
+      "end": 31,
+      "text": "合成示例材料：示例科技通过年度软件订阅收费。订阅合同按年签订。"
+    },
+    {
+      "id": "chk_55615e7ac1e9493e8984048f_0",
+      "source_id": "src_55615e7ac1e9493e8984048f",
+      "start": 0,
+      "end": 47,
+      "text": "合成示例网页：示例科技在2025年的客户续费率为92%。该指标按续约客户数除以到期客户数计算。"
+    }
+  ],
+  "searches": [
+    {
+      "id": "search1",
+      "question_id": "q2",
+      "gap_id": "gap1",
+      "query": "示例科技2025年客户续费率是多少？",
+      "urls": [
+        "https://example.invalid/retention"
+      ],
+      "source_ids": [
+        "src_55615e7ac1e9493e8984048f"
+      ],
+      "error": null,
+      "created_at": "2026-10-19T07:32:16.241858Z"
+    }
+  ],
+  "rounds": 3,
+  "stop_reason": "no_open_gaps"
+}

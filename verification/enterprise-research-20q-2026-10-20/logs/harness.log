@@ -1,0 +1,10 @@
+[run] Q2 Tesla preset=standard
+[run] Q3 Microsoft preset=standard
+[run] Q4 Notion preset=standard
+{"id": "Q4", "company": "Notion", "difficulty": "easy", "preset": "standard", "exit_code": 0, "elapsed_seconds": 426.5, "directory": "runs/benchmark-20261020/Q4/research-594da4fb2b61-cywuio47", "stop_reason": "round_limit", "rounds": 8, "evidence": 31, "claims": 34, "log": "verification/enterprise-research-20q-2026-10-20/logs/Q4.log"}
+[run] Q9 NVIDIA preset=standard
+{"id": "Q3", "company": "Microsoft", "difficulty": "easy", "preset": "standard", "exit_code": 0, "elapsed_seconds": 557.9, "directory": "runs/benchmark-20261020/Q3/research-a4ed21227de2-3lzvablu", "stop_reason": "round_limit", "rounds": 8, "evidence": 12, "claims": 34, "log": "verification/enterprise-research-20q-2026-10-20/logs/Q3.log"}
+[run] Q11 Tesla preset=standard
+[run] Q1 Tesla preset=easy
+{"id": "Q1", "company": "Tesla", "difficulty": "easy", "preset": "easy", "exit_code": 0, "elapsed_seconds": 713.8, "directory": "runs/benchmark-20261020/Q1/research-c28980468eb8-9g0ur36_", "stop_reason": "round_limit", "rounds": 6, "evidence": 18, "claims": 19, "log": "verification/enterprise-research-20q-2026-10-20/logs/Q1.log"}
+[run] Q2 Tesla preset=standard

@@ -1,0 +1,28 @@
+{
+  "run_id": "60e400875af1",
+  "mode": "live",
+  "stop_reason": "error",
+  "rounds": 2,
+  "evidence": 8,
+  "claims": 6,
+  "open_gaps": 4,
+  "metrics": {
+    "model_calls": 7,
+    "searches": 2,
+    "pages": 10,
+    "embedding_calls": 39,
+    "reranker_calls": 4,
+    "limits": {
+      "rounds": 4,
+      "searches": 4,
+      "pages": 10,
+      "model_calls": 20,
+      "embedding_calls": 160,
+      "reranker_calls": 18,
+      "timeout": 600.0,
+      "candidates": 40,
+      "top_k": 10,
+      "no_progress_rounds": 2
+    }
+  }
+}

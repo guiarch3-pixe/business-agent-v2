@@ -1,0 +1,16 @@
+.env
+.env.*
+!.env.example
+.venv/
+__pycache__/
+.pytest_cache/
+*.egg-info/
+data/
+runs/
+.model-cache/
+*.sqlite3
+# Raw runs contain full source-page text snapshots; keep reports and result.json.
+examples/live/**/state.json
+examples/live/**/trace.jsonl
+*.stdout.log
+.DS_Store

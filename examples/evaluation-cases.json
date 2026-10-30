@@ -1,0 +1,26 @@
+{
+  "purpose": "递增难度的真实研究验收输入；预算是试验上限，不代表研究质量已校准",
+  "cases": [
+    {
+      "id": "L1_product_facts",
+      "company": "Microsoft",
+      "goal": "Microsoft 365 企业版包含哪些协作工具？这些工具通过哪些方式向企业客户交付？优先引用微软官方资料，并区分有来源的事实、推导与待验证假设。",
+      "limits": {"rounds": 4, "searches": 4, "pages": 10, "model_calls": 20, "timeout": 600},
+      "review": ["是否有可回溯的产品原文", "是否区分官方来源与第三方概述", "是否保留尚缺的许可和交付细节"]
+    },
+    {
+      "id": "L2_business_model",
+      "company": "Microsoft",
+      "goal": "Microsoft 365 Copilot 与 Copilot Studio 面向的企业使用者、收费单位和购买前提有何区别？这些差异可能如何影响企业客户扩展使用和微软的收入来源？优先使用官方资料；将价格与许可事实、基于事实的推导、商业判断和仍待验证假设明确区分，不把产品定价直接当成已实现收入或利润。",
+      "limits": {"rounds": 6, "searches": 6, "pages": 16, "model_calls": 32, "timeout": 900},
+      "review": ["分别查清两个产品而非只解释一个", "收费单位与购买前提是否有直接引用", "商业判断是否写明推导与未知项", "后续问题是否针对已有缺口而变化"]
+    },
+    {
+      "id": "L3_competing_explanations",
+      "company": "Microsoft",
+      "goal": "Microsoft 企业 AI 产品的商业化能否形成持续收入扩张？比较按席位订阅与按用量计费两种机制，寻找支持与限制两种机制的公开证据；区分产品能力、公开价格、客户采用、实际收入与利润等不同证据层级。对于缺少续费率、实际使用强度或单位经济数据的部分，保留开放缺口和可检验假设，不能用市场宣传填补。",
+      "limits": {"rounds": 10, "searches": 12, "pages": 40, "model_calls": 64, "embedding_calls": 300, "reranker_calls": 30, "timeout": 2400},
+      "review": ["是否同时呈现支持与限制证据", "是否避免混同定价与实际业绩", "重要商业判断是否能沿引用链复查", "无法取得的关键数据是否明确保持未核实"]
+    }
+  ]
+}

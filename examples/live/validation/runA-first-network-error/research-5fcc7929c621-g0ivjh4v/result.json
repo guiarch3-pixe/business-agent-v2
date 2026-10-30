@@ -1,0 +1,31 @@
+{
+  "run_id": "5fcc7929c621",
+  "mode": "live",
+  "stop_reason": "error",
+  "rounds": 0,
+  "evidence": 0,
+  "claims": 0,
+  "open_gaps": 1,
+  "metrics": {
+    "model_calls": 1,
+    "recovery_calls": 0,
+    "searches": 0,
+    "pages": 0,
+    "embedding_calls": 0,
+    "reranker_calls": 0,
+    "limits": {
+      "rounds": 10,
+      "searches": 16,
+      "pages": 40,
+      "model_calls": 70,
+      "recovery_calls": 2,
+      "embedding_calls": 300,
+      "reranker_calls": 30,
+      "timeout": 1800.0,
+      "candidates": 40,
+      "top_k": 10,
+      "no_progress_rounds": 2,
+      "gap_attempts": 2
+    }
+  }
+}

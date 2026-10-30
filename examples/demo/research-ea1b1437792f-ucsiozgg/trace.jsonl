@@ -1,0 +1,81 @@
+{"sequence": 1, "time": "2026-10-19T07:32:16.227479+00:00", "event": "run_start", "limits": {"rounds": 6, "searches": 8, "pages": 24, "model_calls": 36, "recovery_calls": 2, "embedding_calls": 160, "reranker_calls": 18, "timeout": 1200, "candidates": 40, "top_k": 10, "no_progress_rounds": 2}, "mode": "demo"}
+{"sequence": 2, "time": "2026-10-19T07:32:16.229516+00:00", "event": "node_start", "node": "plan", "round": 0}
+{"sequence": 3, "time": "2026-10-19T07:32:16.229702+00:00", "event": "model_start", "schema": "Plan", "prompt_hash": "b94267a4345b3448501bb551006e8bab8218349ecafa8dcb6bd3b1069d141321"}
+{"sequence": 4, "time": "2026-10-19T07:32:16.229783+00:00", "event": "model_end", "schema": "Plan", "model": "synthetic-fixture-NOT-DeepSeek", "usage": {"input_tokens": null, "output_tokens": null}}
+{"sequence": 5, "time": "2026-10-19T07:32:16.229841+00:00", "event": "question", "question": {"id": "q1", "text": "示例科技的收入模式是什么？", "parent_gap_id": "gap0", "round": 1}, "plan": {"gap_id": "gap0", "question": "示例科技的收入模式是什么？", "query": "示例科技的收入模式是什么？", "rationale": "合成演示：逐轮处理未解决缺口"}}
+{"sequence": 6, "time": "2026-10-19T07:32:16.230279+00:00", "event": "node_end", "node": "plan", "round": 1}
+{"sequence": 7, "time": "2026-10-19T07:32:16.230807+00:00", "event": "node_start", "node": "retrieve", "round": 1}
+{"sequence": 8, "time": "2026-10-19T07:32:16.232151+00:00", "event": "retrieval", "question_id": "q1", "gap_id": "gap0", "embedding": "demo-hash-64-NOT-semantic", "reranker": "demo-token-overlap-NOT-neural", "hits": [{"chunk_id": "chk_b783e403e8d2211c656b8047_0", "source_id": "src_b783e403e8d2211c656b8047", "vector_score": 0.7171381115913391, "rerank_score": 5.0}]}
+{"sequence": 9, "time": "2026-10-19T07:32:16.232620+00:00", "event": "node_end", "node": "retrieve", "round": 1}
+{"sequence": 10, "time": "2026-10-19T07:32:16.233168+00:00", "event": "node_start", "node": "coverage", "round": 1}
+{"sequence": 11, "time": "2026-10-19T07:32:16.233310+00:00", "event": "model_start", "schema": "Coverage", "prompt_hash": "9566fa860945ed0b8bd8d5e3fa32f11e295fc476446df7f1465a83da7c6a0748"}
+{"sequence": 12, "time": "2026-10-19T07:32:16.233392+00:00", "event": "model_end", "schema": "Coverage", "model": "synthetic-fixture-NOT-DeepSeek", "usage": {"input_tokens": null, "output_tokens": null}}
+{"sequence": 13, "time": "2026-10-19T07:32:16.233436+00:00", "event": "coverage", "sufficient": true, "chunk_ids": ["chk_b783e403e8d2211c656b8047_0"], "rationale": "合成演示：检查所需字段", "missing": "", "gap_id": "gap0"}
+{"sequence": 14, "time": "2026-10-19T07:32:16.233682+00:00", "event": "node_end", "node": "coverage", "round": 1}
+{"sequence": 15, "time": "2026-10-19T07:32:16.234501+00:00", "event": "node_start", "node": "extract", "round": 1}
+{"sequence": 16, "time": "2026-10-19T07:32:16.234631+00:00", "event": "model_start", "schema": "Extraction", "prompt_hash": "6dae0cad1cec430ebf3e103c594280340a99d908008245589f7d88573621d789"}
+{"sequence": 17, "time": "2026-10-19T07:32:16.234697+00:00", "event": "model_end", "schema": "Extraction", "model": "synthetic-fixture-NOT-DeepSeek", "usage": {"input_tokens": null, "output_tokens": null}}
+{"sequence": 18, "time": "2026-10-19T07:32:16.234816+00:00", "event": "evidence_extracted", "evidence_ids": ["ev_5cfe78afbe85302470b512a3"], "question_id": "q1"}
+{"sequence": 19, "time": "2026-10-19T07:32:16.235133+00:00", "event": "node_end", "node": "extract", "round": 1}
+{"sequence": 20, "time": "2026-10-19T07:32:16.235615+00:00", "event": "node_start", "node": "assess", "round": 1}
+{"sequence": 21, "time": "2026-10-19T07:32:16.235814+00:00", "event": "model_start", "schema": "Assessment", "prompt_hash": "4167ca54afdc01deb1483b0dcb39ceb87e98afa293fb0263871a96eb193bae6d"}
+{"sequence": 22, "time": "2026-10-19T07:32:16.235909+00:00", "event": "model_end", "schema": "Assessment", "model": "synthetic-fixture-NOT-DeepSeek", "usage": {"input_tokens": null, "output_tokens": null}}
+{"sequence": 23, "time": "2026-10-19T07:32:16.236131+00:00", "event": "assessment", "question_id": "q1", "gap_id": "gap0", "claim_ids": ["c1_1", "c1_2", "c1_3", "c1_4"], "resolved": false, "rationale": "合成演示：先回答子问题，补齐续费证据后再综合回答原始问题。", "semantic_verification": "model_assessed"}
+{"sequence": 24, "time": "2026-10-19T07:32:16.236614+00:00", "event": "node_end", "node": "assess", "round": 1}
+{"sequence": 25, "time": "2026-10-19T07:32:16.237334+00:00", "event": "node_start", "node": "plan", "round": 1}
+{"sequence": 26, "time": "2026-10-19T07:32:16.237541+00:00", "event": "model_start", "schema": "Plan", "prompt_hash": "df51a60f5a307fa41f0bae8ee606547611d63bcdf8faec0864b8600a16a57981"}
+{"sequence": 27, "time": "2026-10-19T07:32:16.237618+00:00", "event": "model_end", "schema": "Plan", "model": "synthetic-fixture-NOT-DeepSeek", "usage": {"input_tokens": null, "output_tokens": null}}
+{"sequence": 28, "time": "2026-10-19T07:32:16.237661+00:00", "event": "question", "question": {"id": "q2", "text": "示例科技2025年客户续费率是多少？", "parent_gap_id": "gap1", "round": 2}, "plan": {"gap_id": "gap1", "question": "示例科技2025年客户续费率是多少？", "query": "示例科技2025年客户续费率是多少？", "rationale": "合成演示：逐轮处理未解决缺口"}}
+{"sequence": 29, "time": "2026-10-19T07:32:16.238006+00:00", "event": "node_end", "node": "plan", "round": 2}
+{"sequence": 30, "time": "2026-10-19T07:32:16.238402+00:00", "event": "node_start", "node": "retrieve", "round": 2}
+{"sequence": 31, "time": "2026-10-19T07:32:16.239409+00:00", "event": "retrieval", "question_id": "q2", "gap_id": "gap1", "embedding": "demo-hash-64-NOT-semantic", "reranker": "demo-token-overlap-NOT-neural", "hits": [{"chunk_id": "chk_b783e403e8d2211c656b8047_0", "source_id": "src_b783e403e8d2211c656b8047", "vector_score": 0.591609537601471, "rerank_score": 6.0}]}
+{"sequence": 32, "time": "2026-10-19T07:32:16.239816+00:00", "event": "node_end", "node": "retrieve", "round": 2}
+{"sequence": 33, "time": "2026-10-19T07:32:16.240203+00:00", "event": "node_start", "node": "coverage", "round": 2}
+{"sequence": 34, "time": "2026-10-19T07:32:16.240470+00:00", "event": "model_start", "schema": "Coverage", "prompt_hash": "3f1bcdeceb50821c8f5cfab621a28d99334ec05be60bb1fa3f18548af943739b"}
+{"sequence": 35, "time": "2026-10-19T07:32:16.240556+00:00", "event": "model_end", "schema": "Coverage", "model": "synthetic-fixture-NOT-DeepSeek", "usage": {"input_tokens": null, "output_tokens": null}}
+{"sequence": 36, "time": "2026-10-19T07:32:16.240599+00:00", "event": "coverage", "sufficient": false, "chunk_ids": [], "rationale": "合成演示：检查所需字段", "missing": "客户续费率", "gap_id": "gap1"}
+{"sequence": 37, "time": "2026-10-19T07:32:16.240935+00:00", "event": "node_end", "node": "coverage", "round": 2}
+{"sequence": 38, "time": "2026-10-19T07:32:16.241695+00:00", "event": "node_start", "node": "search_web", "round": 2}
+{"sequence": 39, "time": "2026-10-19T07:32:16.242167+00:00", "event": "search_start", "id": "search1", "question_id": "q2", "gap_id": "gap1", "query": "示例科技2025年客户续费率是多少？", "urls": [], "source_ids": [], "error": null, "created_at": "2026-10-19T07:32:16.241858Z"}
+{"sequence": 40, "time": "2026-10-19T07:32:16.242305+00:00", "event": "search_end", "search_id": "search1", "urls": ["https://example.invalid/retention"], "error": null, "cost_metadata": {}}
+{"sequence": 41, "time": "2026-10-19T07:32:16.242628+00:00", "event": "page_start", "url": "https://example.invalid/retention", "search_id": "search1"}
+{"sequence": 42, "time": "2026-10-19T07:32:16.242731+00:00", "event": "page_end", "url": "https://example.invalid/retention", "error": null, "cost_metadata": {}}
+{"sequence": 43, "time": "2026-10-19T07:32:16.245148+00:00", "event": "source_indexed", "source_id": "src_55615e7ac1e9493e8984048f", "content_hash": "a7018b6058ad4560e40bef87be0e04042e63bbdf15e57b11bc636893059dbe6b", "url": "https://example.invalid/retention"}
+{"sequence": 44, "time": "2026-10-19T07:32:16.246410+00:00", "event": "node_end", "node": "search_web", "round": 2}
+{"sequence": 45, "time": "2026-10-19T07:32:16.246894+00:00", "event": "node_start", "node": "retrieve_external", "round": 2}
+{"sequence": 46, "time": "2026-10-19T07:32:16.247899+00:00", "event": "retrieval", "question_id": "q2", "gap_id": "gap1", "embedding": "demo-hash-64-NOT-semantic", "reranker": "demo-token-overlap-NOT-neural", "hits": [{"chunk_id": "chk_55615e7ac1e9493e8984048f_0", "source_id": "src_55615e7ac1e9493e8984048f", "vector_score": 0.6651338338851929, "rerank_score": 11.0}, {"chunk_id": "chk_b783e403e8d2211c656b8047_0", "source_id": "src_b783e403e8d2211c656b8047", "vector_score": 0.591609537601471, "rerank_score": 6.0}]}
+{"sequence": 47, "time": "2026-10-19T07:32:16.248451+00:00", "event": "node_end", "node": "retrieve_external", "round": 2}
+{"sequence": 48, "time": "2026-10-19T07:32:16.248876+00:00", "event": "node_start", "node": "extract", "round": 2}
+{"sequence": 49, "time": "2026-10-19T07:32:16.249061+00:00", "event": "model_start", "schema": "Extraction", "prompt_hash": "0dffb79e421494d29706931382ed0463db93c1348c8d55496d578162359f8b64"}
+{"sequence": 50, "time": "2026-10-19T07:32:16.249130+00:00", "event": "model_end", "schema": "Extraction", "model": "synthetic-fixture-NOT-DeepSeek", "usage": {"input_tokens": null, "output_tokens": null}}
+{"sequence": 51, "time": "2026-10-19T07:32:16.249270+00:00", "event": "evidence_extracted", "evidence_ids": ["ev_5cfe78afbe85302470b512a3", "ev_5ff82e2265979b2c3b93319b"], "question_id": "q2"}
+{"sequence": 52, "time": "2026-10-19T07:32:16.249678+00:00", "event": "node_end", "node": "extract", "round": 2}
+{"sequence": 53, "time": "2026-10-19T07:32:16.250209+00:00", "event": "node_start", "node": "assess", "round": 2}
+{"sequence": 54, "time": "2026-10-19T07:32:16.250436+00:00", "event": "model_start", "schema": "Assessment", "prompt_hash": "1a72eab990a31093b8af20b81fa805b889e06a79323d11515a48fa3d8d3f326c"}
+{"sequence": 55, "time": "2026-10-19T07:32:16.250525+00:00", "event": "model_end", "schema": "Assessment", "model": "synthetic-fixture-NOT-DeepSeek", "usage": {"input_tokens": null, "output_tokens": null}}
+{"sequence": 56, "time": "2026-10-19T07:32:16.250685+00:00", "event": "assessment", "question_id": "q2", "gap_id": "gap1", "claim_ids": ["c2_1"], "resolved": true, "rationale": "合成演示：先回答子问题，补齐续费证据后再综合回答原始问题。", "semantic_verification": "model_assessed"}
+{"sequence": 57, "time": "2026-10-19T07:32:16.251085+00:00", "event": "node_end", "node": "assess", "round": 2}
+{"sequence": 58, "time": "2026-10-19T07:32:16.251749+00:00", "event": "node_start", "node": "plan", "round": 2}
+{"sequence": 59, "time": "2026-10-19T07:32:16.251984+00:00", "event": "model_start", "schema": "Plan", "prompt_hash": "68f192aed400b91f70d3725778422650ff838333672c393e30c0bdf8de969827"}
+{"sequence": 60, "time": "2026-10-19T07:32:16.252070+00:00", "event": "model_end", "schema": "Plan", "model": "synthetic-fixture-NOT-DeepSeek", "usage": {"input_tokens": null, "output_tokens": null}}
+{"sequence": 61, "time": "2026-10-19T07:32:16.252117+00:00", "event": "question", "question": {"id": "q3", "text": "示例科技的收入模式及客户续费情况如何？", "parent_gap_id": "gap0", "round": 3}, "plan": {"gap_id": "gap0", "question": "示例科技的收入模式及客户续费情况如何？", "query": "示例科技的收入模式及客户续费情况如何？", "rationale": "合成演示：逐轮处理未解决缺口"}}
+{"sequence": 62, "time": "2026-10-19T07:32:16.252555+00:00", "event": "node_end", "node": "plan", "round": 3}
+{"sequence": 63, "time": "2026-10-19T07:32:16.252963+00:00", "event": "node_start", "node": "retrieve", "round": 3}
+{"sequence": 64, "time": "2026-10-19T07:32:16.254123+00:00", "event": "retrieval", "question_id": "q3", "gap_id": "gap0", "embedding": "demo-hash-64-NOT-semantic", "reranker": "demo-token-overlap-NOT-neural", "hits": [{"chunk_id": "chk_55615e7ac1e9493e8984048f_0", "source_id": "src_55615e7ac1e9493e8984048f", "vector_score": 0.6647037267684937, "rerank_score": 9.0}, {"chunk_id": "chk_b783e403e8d2211c656b8047_0", "source_id": "src_b783e403e8d2211c656b8047", "vector_score": 0.5554934144020081, "rerank_score": 6.0}]}
+{"sequence": 65, "time": "2026-10-19T07:32:16.254663+00:00", "event": "node_end", "node": "retrieve", "round": 3}
+{"sequence": 66, "time": "2026-10-19T07:32:16.255094+00:00", "event": "node_start", "node": "coverage", "round": 3}
+{"sequence": 67, "time": "2026-10-19T07:32:16.255291+00:00", "event": "model_start", "schema": "Coverage", "prompt_hash": "6aef132ebcad4114710072526a3a8174c2cf56197e99d3545c744155bd253a6e"}
+{"sequence": 68, "time": "2026-10-19T07:32:16.255359+00:00", "event": "model_end", "schema": "Coverage", "model": "synthetic-fixture-NOT-DeepSeek", "usage": {"input_tokens": null, "output_tokens": null}}
+{"sequence": 69, "time": "2026-10-19T07:32:16.255443+00:00", "event": "coverage", "sufficient": true, "chunk_ids": ["chk_55615e7ac1e9493e8984048f_0", "chk_b783e403e8d2211c656b8047_0"], "rationale": "合成演示：检查所需字段", "missing": "", "gap_id": "gap0"}
+{"sequence": 70, "time": "2026-10-19T07:32:16.255886+00:00", "event": "node_end", "node": "coverage", "round": 3}
+{"sequence": 71, "time": "2026-10-19T07:32:16.256570+00:00", "event": "node_start", "node": "extract", "round": 3}
+{"sequence": 72, "time": "2026-10-19T07:32:16.256768+00:00", "event": "model_start", "schema": "Extraction", "prompt_hash": "3841568e82d54649973085684121badab048b06f6cf65f7a228cc9d7cf585842"}
+{"sequence": 73, "time": "2026-10-19T07:32:16.256839+00:00", "event": "model_end", "schema": "Extraction", "model": "synthetic-fixture-NOT-DeepSeek", "usage": {"input_tokens": null, "output_tokens": null}}
+{"sequence": 74, "time": "2026-10-19T07:32:16.256975+00:00", "event": "evidence_extracted", "evidence_ids": ["ev_5cfe78afbe85302470b512a3", "ev_5ff82e2265979b2c3b93319b"], "question_id": "q3"}
+{"sequence": 75, "time": "2026-10-19T07:32:16.257409+00:00", "event": "node_end", "node": "extract", "round": 3}
+{"sequence": 76, "time": "2026-10-19T07:32:16.257801+00:00", "event": "node_start", "node": "assess", "round": 3}
+{"sequence": 77, "time": "2026-10-19T07:32:16.258054+00:00", "event": "model_start", "schema": "Assessment", "prompt_hash": "90db5ac5fcf5dbf4e868525bd4e7e14179317436228dfa894bfc8ec3ae85b7c3"}
+{"sequence": 78, "time": "2026-10-19T07:32:16.258142+00:00", "event": "model_end", "schema": "Assessment", "model": "synthetic-fixture-NOT-DeepSeek", "usage": {"input_tokens": null, "output_tokens": null}}
+{"sequence": 79, "time": "2026-10-19T07:32:16.258284+00:00", "event": "assessment", "question_id": "q3", "gap_id": "gap0", "claim_ids": ["c3_1"], "resolved": true, "rationale": "合成演示：先回答子问题，补齐续费证据后再综合回答原始问题。", "semantic_verification": "model_assessed"}
+{"sequence": 80, "time": "2026-10-19T07:32:16.258703+00:00", "event": "node_end", "node": "assess", "round": 3}
+{"sequence": 81, "time": "2026-10-19T07:32:16.260106+00:00", "event": "run_end", "stop_reason": "no_open_gaps"}

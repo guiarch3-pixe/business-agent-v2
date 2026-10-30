@@ -1,0 +1,31 @@
+{
+  "run_id": "d968652bc210",
+  "mode": "live",
+  "stop_reason": "round_limit",
+  "rounds": 10,
+  "evidence": 63,
+  "claims": 86,
+  "open_gaps": 16,
+  "metrics": {
+    "model_calls": 41,
+    "recovery_calls": 2,
+    "searches": 8,
+    "pages": 33,
+    "embedding_calls": 108,
+    "reranker_calls": 17,
+    "limits": {
+      "rounds": 10,
+      "searches": 16,
+      "pages": 40,
+      "model_calls": 70,
+      "recovery_calls": 2,
+      "embedding_calls": 300,
+      "reranker_calls": 30,
+      "timeout": 1800.0,
+      "candidates": 40,
+      "top_k": 10,
+      "no_progress_rounds": 2,
+      "gap_attempts": 2
+    }
+  }
+}
